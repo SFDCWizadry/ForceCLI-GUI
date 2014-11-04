@@ -1,8 +1,7 @@
 {
 	"name": "soql-tester",
-	"main": "index.html"/*,
-	// "window": {
-	// 	"toolbar": false
-	// }
-	*/
+	"main": "index.html",
+	"window": {
+		"toolbar": false
+	}
 }

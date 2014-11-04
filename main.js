@@ -1,5 +1,3 @@
-var file = require('file.js');
-
 function run_cmd(cmd, args, cb, end) {
     var spawn = require('child_process').spawn,
         child = spawn(cmd, args),
