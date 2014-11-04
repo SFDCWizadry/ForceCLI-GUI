@@ -11,7 +11,7 @@ Covered below feature from Force.com CLI, and will be add some more in the near 
 
 以下のForce.com CLIの機能を実装しています。他の機能もこれから続々実装する予定：
 
- * [SOQL Query][6] 
+ * [SOQL Query][5] 
 
 ##Usage
 
@@ -21,7 +21,8 @@ Covered below feature from Force.com CLI, and will be add some more in the near 
  2. Download Force.com CLI binary that fit your OS [here][3]
  3. Clone this repository
  4. Place your Force.com CLI binary file inside the the source directory
- 5. Place and run your NodeWebkit binary file from outside the the source directory
+ 5.	replace `put_username_here` and `put_password_here` in the `main.js` file with your Salesforce user and password
+ 6. Place and run your NodeWebkit binary file from outside the the source directory
 
 ###日本語：
 
@@ -29,9 +30,12 @@ Covered below feature from Force.com CLI, and will be add some more in the near 
  2. 自分のパソコンのOSのマッチしているForce.com CLIのバイナリをダウンロンド 。[こちら][3]
  3. このレポジトリをクローン
  4. Force.com CLIのバイナリをソースフォルダーに設置
- 5. NodeWebkitのバイナリをソースフォルダーの外に設置し、実行
+ 5.	`main.js` ファイル内の `put_username_here` と `put_password_here` をご自分のセールスフォースのユーザとパスワードに書き換え
+ 6. NodeWebkitのバイナリをソースフォルダーの外に設置し、実行
 
-     $ node-webkit ForceCLI-GUI/
+Ex:
+
+    $ node-webkit ForceCLI-GUI/
 
 [1]: https://github.com/rogerwang/node-webkit
 [2]: https://github.com/rogerwang/node-webkit/blob/master/README.md#downloads
