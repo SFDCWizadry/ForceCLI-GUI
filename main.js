@@ -1,47 +1,50 @@
-function run_cmd(cmd, args, cb, end) {
+function run_cmd(cmd, callback){
+	var exec = require('child_process').exec;
+	var child = exec(cmd, callback);
+}
+
+/*function run_cmd(cmd, args, cb, end) {
     var spawn = require('child_process').spawn,
         child = spawn(cmd, args),
         me = this;
-    child.stdout.on('data', function (buffer) { cb(me, buffer) });
+    console.log('me:' + me);
+    child.stdout.on('data', function (buffer) { cb(me, buffer); });
     child.stdout.on('end', end);
-}
+}*/
 
-var foo = new run_cmd(
-    'force', [
-    	'login', 
-    	'-u=<put_username_here>',
-    	'-p=<put_password_here>'
-    ],
-    function (me, buffer) { me.stdout += buffer.toString() },
-    function () { console.log(foo.stdout) }
-);
+window.onload = function (){
+	var loginbtn = document.getElementById('loginbtn');
+	loginbtn.addEventListener(
+		'click', function (e) {
+			var uninput = document.querySelector('#un');
+			var username = uninput.value;
+			var password = document.querySelector("#pass").value;
 
-document.getElementById('test-soql').addEventListener('click', function (e) {
-	var textArea = document.querySelector('#editor');
-	var outputDiv = document.querySelector('#output');
-	if(textArea.value.trim() !== '') {
-		var args1  = ['query', textArea.value];
-		var foo = new run_cmd(
-		    'force', args1,
-		    function (me, buffer) { me.stdout += buffer.toString() },
-		    function () { 
-		    	var outputStr = foo.stdout;
-		    	if(outputStr !== undefined)
-		    	{
-		    		outputStr = outputStr.replace(/(?:\r\n|\r|\n)/g, '<br />');
-			    	if(outputStr.indexOf('undefined') > -1){
-			    		outputStr = outputStr.replace('undefined', '');
+			var foo = new run_cmd(
+				"force login -u=" + username +" -p=" + password,
+				function(error, stdout, stderr){
+					console.log('stdout: ' + stdout);
+			    	console.log('stderr: ' + stderr);
+			    	console.log('err: ' + error);
+
+			      	var resultobj = document.querySelector("#loginresult");
+			    	console.log(resultobj);
+
+			    	if (error !== null) {
+			      		console.log('exec error: ' + error);
+			      		resultobj.innerHTML = error;
+			      		uninput.value = username;
+			    	} else {
+			    		//debugger;
+			    		resultobj.innerHTML = stdout;
+			    		uninput.value = username;
 			    	}
-			    	outputDiv.innerHTML = outputStr;
-			    	outputDiv.style.display = 'block';
-		    	} else {
-		    		outputDiv.innerHTML = 'No Data';
-			    	outputDiv.style.display = 'block';
-		    	}
-		   	}
-		);
-	}
-});
+				}
+			);
+		}
+	);
+};
+/*
 
 var gui = require('nw.gui');
 var win = gui.Window.get();
@@ -49,9 +52,9 @@ win.on('closed', function() {
 	 foo = new run_cmd(
 	    'force', [
 	    	'logout', 
-	    	'-u=<put_username_here>'
+	    	'-u=cy.appcom_dev2@terrasky.co.jp'
 	    ],
 	    function (me, buffer) { me.stdout += buffer.toString() },
 	    function () { console.log(foo.stdout) }
 	);
-});
+});*/

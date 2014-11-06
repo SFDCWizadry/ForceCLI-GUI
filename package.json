@@ -1,7 +1,4 @@
 {
-	"name": "soql-tester",
-	"main": "index.html",
-	"window": {
-		"toolbar": false
-	}
+  "name": "force-login",
+  "main": "index.html"
 }
