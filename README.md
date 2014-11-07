@@ -33,9 +33,19 @@ Covered below feature from Force.com CLI, and will be add some more in the near 
  5.	`main.js` ファイル内の `put_username_here` と `put_password_here` をご自分のセールスフォースのユーザとパスワードに書き換え
  6. NodeWebkitのバイナリをソースフォルダーの外に設置し、実行
 
-Ex:
+###Ex （実行例）:
 
-    $ node-webkit ForceCLI-GUI/
+#### windows
+
+    $ nw.exe ForceCLI-GUI/
+
+#### mac
+
+    $ node-webkit.app ForceCLI-GUI/
+
+#### unix
+
+    $ nw ForceCLI-GUI/
 
 [1]: https://github.com/rogerwang/node-webkit
 [2]: https://github.com/rogerwang/node-webkit/blob/master/README.md#downloads
