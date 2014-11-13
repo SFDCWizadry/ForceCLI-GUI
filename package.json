@@ -1,7 +1,8 @@
 {
 	"name": "soql-tester",
-	"main": "index.html",
+	"main": "ui.html",
 	"window": {
-		"toolbar": false
+        "frame": false,
+        "toolbar": false
 	}
 }
