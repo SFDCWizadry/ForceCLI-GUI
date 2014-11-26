@@ -9,8 +9,6 @@ This app is currently only running as a NodeWebkit app. And will be wrap as a pa
 ##Feature
 Covered below feature from Force.com CLI, and will be add some more in the near future: 
 
-以下のForce.com CLIの機能を実装しています。他の機能もこれから続々実装する予定：
-
  * [SOQL Query][5] 
 
 ##Usage
@@ -24,16 +22,7 @@ Covered below feature from Force.com CLI, and will be add some more in the near 
  5. replace `put_username_here` and `put_password_here` in the `main.js` file with your Salesforce user and password
  6. Place and run your NodeWebkit binary file from outside the the source directory
 
-###日本語：
-
- 1.  NodeWebkitのバイナリファイルをダウンロンド。[こちら][2]
- 2. 自分のパソコンのOSのマッチしているForce.com CLIのバイナリをダウンロンド 。[こちら][3]
- 3. このレポジトリをクローン
- 4. Force.com CLIのバイナリをソースフォルダーに設置
- 5. `main.js` ファイル内の `put_username_here` と `put_password_here` をご自分のセールスフォースのユーザとパスワードに書き換え
- 6. NodeWebkitのバイナリをソースフォルダーの外に設置し、実行
-
-###Ex （実行例）:
+###Ex :
 
 #### windows
 
