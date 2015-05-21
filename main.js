@@ -7,7 +7,7 @@ function run_cmd(cmd, args, cb, end) {
 }
 
 var foo = new run_cmd(
-    'force', [
+    'sforce', [
     	'login', 
     	'-u=<put_username_here>',
     	'-p=<put_password_here>'
@@ -22,7 +22,7 @@ document.getElementById('test-soql').addEventListener('click', function (e) {
 	if(textArea.value.trim() !== '') {
 		var args1  = ['query', textArea.value];
 		var foo = new run_cmd(
-		    'force', args1,
+		    'sforce', args1,
 		    function (me, buffer) { me.stdout += buffer.toString() },
 		    function () { 
 		    	var outputStr = foo.stdout;
@@ -47,7 +47,7 @@ var gui = require('nw.gui');
 var win = gui.Window.get();
 win.on('closed', function() {
 	 foo = new run_cmd(
-	    'force', [
+	    'sforce', [
 	    	'logout', 
 	    	'-u=<put_username_here>'
 	    ],

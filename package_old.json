@@ -1,0 +1,11 @@
+{
+  "name": "soql-tester",
+  "main": "index.html",
+  "window": {
+    "toolbar": false
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "chai": "^2.3.0"
+  }
+}
