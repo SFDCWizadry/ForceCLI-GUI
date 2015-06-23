@@ -1,7 +1,7 @@
 {
   "name": "ForceCLI-UI",
   "version": "0.0.1",
-  "main": "index.html",
+  "main": "login.html",
   "window": {
     "toolbar": false,
     "frame": false
